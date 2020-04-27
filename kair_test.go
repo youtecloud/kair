@@ -77,3 +77,14 @@ func TestPersonalFormat(t *testing.T) {
 		fmt.Println("TestPersonalFormat - OK")
 	}
 }
+
+func TestPersonalFormatInHour24(t *testing.T) {
+	date := DateTime(20, 05, 2018, 18, 20, 0)
+	aR := date.CustomFormat("MMM/dd/YY HH:m:s")
+	eR := "May/20/18 18:20:0"
+	if aR != eR {
+		t.Fatalf("Expected %s but go %s", eR, aR)
+	} else {
+		fmt.Println("TestPersonalFormat - OK")
+	}
+}
